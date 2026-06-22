@@ -10,7 +10,7 @@ class AgenteExtractor:
         self.nombre = nombre
 
     def procesar_termino(self, tipo, contenido):
-        return f'    printf("Extraido: {contenido} ({tipo})\\n");'
+        return f'printf("Extraido: {contenido} ({tipo})\\n");'
 
 
 class AgenteValidador:
@@ -19,8 +19,8 @@ class AgenteValidador:
 
     def validar_sistema(self, nombre_sistema, num_ecuaciones, num_variables):
         lineas = []
-        lineas.append(f'    printf("Analizando consistencia de {nombre_sistema}...\\n");')
-        lineas.append(f'    printf("{num_ecuaciones} ecuaciones con {num_variables} incognitas detectadas.\\n");')
+        lineas.append(f'printf("Analizando consistencia de {nombre_sistema}...\\n");')
+        lineas.append(f'printf("{num_ecuaciones} ecuaciones con {num_variables} incognitas detectadas.\\n");')
 
 
 class AgenteResolutor:
@@ -29,7 +29,7 @@ class AgenteResolutor:
 
     def simular_resolucion(self, variables, nombre_sistema):
         lineas = []
-        lineas.append(f'    printf("Generando espacio de matriz para {nombre_sistema}...\\n");')
+        lineas.append(f'printf("Generando espacio de matriz para {nombre_sistema}...\\n");')
         
         soluciones = {"x": "5.0", "y": "0.0", "a": "3.11", "b": "2.22", "m": "4.0", "n": "0.0"}
         
@@ -39,7 +39,7 @@ class AgenteResolutor:
             lista_prints.append(f"{var} = {val}")
             
         resultado_str = " | ".join(lista_prints)
-        lineas.append(f'    printf("Resultado final calculado: {resultado_str}\\n\\n");')
+        lineas.append(f'printf("Resultado final calculado: {resultado_str}\\n\\n");')
         return lineas
 
 class MultiAgenteVisitor(SolveSelVisitor):
